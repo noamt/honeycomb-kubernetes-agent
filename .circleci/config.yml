@@ -17,7 +17,6 @@ jobs:
       - setup_remote_docker
       - run: make container
       - run: make test
-      - run: e2e-tests/test.sh
       - run:
           name: "Deploy on tagged master push"
           command: |
