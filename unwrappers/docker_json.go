@@ -23,7 +23,7 @@ func (u *DockerJSONLogUnwrapper) Unwrap(rawLine string, parser parsers.Parser) (
 	line := &dockerJSONLogLine{}
 	err := json.Unmarshal([]byte(rawLine), line)
 	if err != nil {
-		logrus.WithError(err).Info("Error parsing docker JSON line")
+		logrus.WithError(err).Info("Error parsing docker JSON line: ", rawLine)
 		return nil, fmt.Errorf("Error parsing log line as Docker json-file log: %v", err)
 	}
 	line.Log = strings.TrimRight(line.Log, "\n")

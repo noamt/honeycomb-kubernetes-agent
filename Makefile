@@ -21,7 +21,7 @@ BIN := honeycomb-kubernetes-agent
 PKG := github.com/honeycombio/honeycomb-kubernetes-agent
 
 # Where to push the docker image.
-REGISTRY ?= honeycombio
+REGISTRY ?= noamt
 
 # Which architecture to build - see $(ALL_ARCH) for options.
 ARCH ?= amd64
