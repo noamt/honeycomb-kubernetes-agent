@@ -96,7 +96,7 @@ type LineHandlerImpl struct {
 func (h *LineHandlerImpl) Handle(rawLine string) {
 	event, err := h.unwrapper.Unwrap(rawLine, h.parser)
 	if err != nil {
-		logrus.WithError(err).Debug("Failed to parse line")
+		logrus.WithError(err).Debug("Failed to parse line:", rawLine)
 		return
 	}
 	if event == nil {
